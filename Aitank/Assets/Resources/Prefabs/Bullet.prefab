@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 119574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 199.339996, y: 1.98000002, z: 127.709999}
-  m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
+  m_LocalScale: {x: 2.4000001, y: 2.4000001, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119574}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 1
+  m_Mass: 20
+  m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f9913cdaa825a499f105c8ea52f5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coefficient: 5
-  airDensity: 220
-  crossSectionalArea: 200
-  airRelativeVelocity: {x: 0, y: -.00999999978, z: 0}
+  coefficient: 4
+  airDensity: 1205
+  crossSectionalArea: 113
+  airRelativeVelocity: {x: 0, y: -.0149999997, z: 0}
 --- !u!114 &11446350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Material
@@ -146,31 +146,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Drag
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .800000012
+      value: 2.4000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .800000012
+      value: 2.4000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: .800000012
+      value: 2.4000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: coefficient
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: airDensity
-      value: 220
+      value: 1205
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: crossSectionalArea
-      value: 200
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: airRelativeVelocity.x
@@ -178,7 +178,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: airRelativeVelocity.y
-      value: -.00999999978
+      value: -.0149999997
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: airRelativeVelocity.z
