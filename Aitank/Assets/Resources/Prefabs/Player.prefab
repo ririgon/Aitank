@@ -45,6 +45,7 @@ GameObject:
   - 54: {fileID: 5443468}
   - 114: {fileID: 11402014}
   - 114: {fileID: 11499892}
+  - 114: {fileID: 11414276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Tank
@@ -161,6 +162,7 @@ GameObject:
   - 4: {fileID: 457394}
   - 33: {fileID: 3359300}
   - 23: {fileID: 2331148}
+  - 64: {fileID: 6402896}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -202,8 +204,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 292.200012, y: 122.300003, z: 295.600006}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 292.200012, y: 0, z: 295.600006}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 410912}
   - {fileID: 414510}
@@ -295,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 110922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .300000012, y: 1, z: .300000012}
   m_Children: []
   m_Father: {fileID: 498932}
   m_RootOrder: 1
@@ -518,14 +520,26 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118668}
   serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
+  m_Mass: 44000
+  m_Drag: 2
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6402896
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 5e3dc8c1fcb96394a8022aa0f10ada34, type: 3}
 --- !u!64 &6452436
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -573,11 +587,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dccd16510a42546afec8fe70bcfcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePower: 180000
-  gunBarrelAngle: 0
+  firePower: 35
   turretAngle: 0
   raderAngle: 0
-  moveSpeed: 60
+  moveSpeed: 2000
+  reloadTime: 0
+--- !u!114 &11414276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118668}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f9913cdaa825a499f105c8ea52f5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coefficient: 4
+  airDensity: 1205
+  crossSectionalArea: 900
+  airRelativeVelocity: {x: 0, y: -.150000006, z: 0}
 --- !u!114 &11499892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,7 +625,47 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: reloadTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 44000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: firePower
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coefficient
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: airDensity
+      value: 1205
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: airRelativeVelocity.y
+      value: -.150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: crossSectionalArea
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118668}

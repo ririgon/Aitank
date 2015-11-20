@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
 	private float yMaxLimit = 80;
 	private float yMinLimit = -80;
 
+	private bool ctrlSw;
+
 	/* private GameObject prefabFire; */
 
 	// Use this for initialization
@@ -21,17 +23,28 @@ public class CameraController : MonoBehaviour
 		x = angels.y;
 		y = angels.x;
 
+		ctrlSw = false;
 		/* prefabFire = (GameObject)Resources.Load("Prefabs/Fire"); */
 
+	}
+
+	void Update()
+	{
+		if (Input.GetButtonDown("Switch"))
+		{
+			ctrlSw = !ctrlSw;
+		}
 	}
 
 	// Update is called once per frame
 	void LateUpdate()
 	{
-		Rotate(Input.GetAxis("MouseVertical"), Input.GetAxis("MouseHorizontal"));
+		if (ctrlSw)
+		{
+			Rotate(Input.GetAxis("MouseVertical"), Input.GetAxis("MouseHorizontal"));
 
-		Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-
+			Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+		}
 
 		// マウスクリックした場所にパーティクル生成
 		/*

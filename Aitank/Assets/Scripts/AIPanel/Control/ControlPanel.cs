@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public abstract class ControlPanel : IPanel
 {
@@ -10,7 +11,16 @@ public abstract class ControlPanel : IPanel
 	protected object[] param;
 
 	// 実行モード （true: 通過 false:実行が終了するまで待機）
-	protected bool isBlock;
+	public bool isBlock { set; get; }
 
-	public abstract void Run();
+	public bool isProccessing { set; get; }
+
+	public ControlPanel(ITank tank, bool isBlock, params object[] param)
+	{
+		this.tank = tank;
+		this.param = param;
+		this.isBlock = isBlock;
+	}
+
+	public abstract IEnumerator Run();
 }
