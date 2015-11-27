@@ -60,6 +60,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 437570}
   - 64: {fileID: 6476046}
+  - 135: {fileID: 13502124}
   m_Layer: 0
   m_Name: Area
   m_TagString: Untagged
@@ -155,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 230.5, y: 0, z: 198.600006}
+  m_LocalPosition: {x: 478, y: 0, z: 297}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 422952}
@@ -406,7 +407,7 @@ MeshCollider:
   m_GameObject: {fileID: 154132}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 9cb114d4cb80e5146a18b34104a8154e, type: 3}
@@ -428,18 +429,33 @@ MonoBehaviour:
   _raderAngle: 0
   _moveSpeed: 2000
   _reloadTime: 5
+  _lockedObject: {x: 0, y: 0, z: 0}
+  maxRange: 0
+  minRange: 0
 --- !u!114 &11410286
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ea986aea3daff40a95eafd68eea5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 11408860}
+--- !u!135 &13502124
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 250
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

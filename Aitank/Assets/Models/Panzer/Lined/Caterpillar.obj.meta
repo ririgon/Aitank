@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 29339212b4ade444e9d42d04d40c700c
-timeCreated: 1447727584
+guid: b435729f263f8c24eae6d72a0a8c56da
+timeCreated: 1448330462
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Caterpiller
-    100002: //RootNode
-    400000: Caterpiller
-    400002: //RootNode
-    2300000: Caterpiller
-    3300000: Caterpiller
-    4300000: Caterpiller
+    100000: //RootNode
+    100002: default
+    100004: Caterpillar
+    400000: //RootNode
+    400002: default
+    400004: Caterpillar
+    2300000: default
+    2300002: Caterpillar
+    3300000: default
+    3300002: Caterpillar
+    4300000: default
+    4300002: Caterpillar
   materials:
     importMaterials: 1
     materialName: 0

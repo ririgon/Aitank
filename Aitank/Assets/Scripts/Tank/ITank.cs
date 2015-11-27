@@ -111,10 +111,16 @@ public abstract class ITank : MonoBehaviour
 	/// <summary>
 	/// レーダーが捕捉したオブジェクトの座標が格納されます
 	/// </summary>
-	public Dictionary<string, Vector3> capturedObject
+	public Dictionary<string, ITank> capturedObject
 	{
 		set { this._capturedObject = value; }
 		get { return this._capturedObject; }
+	}
+
+	public Vector3 lockedObject
+	{
+		set { this._lockedObject = value; }
+		get { return this._lockedObject; }
 	}
 
 	/// <summary>
@@ -176,10 +182,14 @@ public abstract class ITank : MonoBehaviour
 		get { return this._reloadTime; }
 	}
 
-	protected Transform muzzleTransform;
-	protected Transform barrelTransform;
-	protected Transform turretTransform;
-	protected Transform raderTransform;
+	[HideInInspector]
+	public Transform muzzleTransform;
+	[HideInInspector]
+	public Transform barrelTransform;
+	[HideInInspector]
+	public Transform turretTransform;
+	[HideInInspector]
+	public Transform raderTransform;
 
 	#region Private Variables
 	[SerializeField, HideInInspector]
@@ -197,6 +207,8 @@ public abstract class ITank : MonoBehaviour
 	[SerializeField, HideInInspector]
 	private float _reloadTime;
 	[SerializeField, HideInInspector]
-	private Dictionary<string, Vector3> _capturedObject;
+	private Dictionary<string, ITank> _capturedObject;
+	[SerializeField, HideInInspector]
+	private Vector3 _lockedObject;
 	#endregion
 }

@@ -80,17 +80,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AIPanel\Control\ControlPanel.cs" />
-    <Compile Include="Assets\Scripts\AIPanel\Control\MovePanel.cs" />
-    <Compile Include="Assets\Scripts\AIPanel\Control\RotatePanel.cs" />
-    <Compile Include="Assets\Scripts\AIPanel\Control\StopPanel.cs" />
-    <Compile Include="Assets\Scripts\AIPanel\IPanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Base\IPanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Fire\FireNormalPanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Fire\FirePanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Move\MovePanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Move\MoveSinWavePanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Search\SearchNearPanel.cs" />
+    <Compile Include="Assets\Scripts\AIPanel\Search\SearchPanel.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\SelfPowerBullet.cs" />
     <Compile Include="Assets\Scripts\Controller\ControllerBase.cs" />
-    <Compile Include="Assets\Scripts\Controller\TankAI_A.cs" />
     <Compile Include="Assets\Scripts\Controller\TankAI_Dummy.cs" />
-    <Compile Include="Assets\Scripts\Controller\TankAI_Panel.cs" />
+    <Compile Include="Assets\Scripts\Controller\TankAI_State.cs" />
     <Compile Include="Assets\Scripts\Controller\TankController.cs" />
     <Compile Include="Assets\Scripts\Debug\DebugUI.cs" />
     <Compile Include="Assets\Scripts\Debug\UIHandler.cs" />

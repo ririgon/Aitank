@@ -22,12 +22,15 @@ public class TankAI_Dummy : ControllerBase
 
 			foreach (var pair in tank.capturedObject)
 			{
-				var current = Vector3.Distance(tank.transform.position, pair.Value);
-
-				if (distance > Mathf.Min(distance, current))
+				if (pair.Value != null)
 				{
-					distance = Mathf.Min(distance, current);
-					v = pair.Value;
+					var current = Vector3.Distance(tank.transform.position, pair.Value.transform.position);
+
+					if (distance > Mathf.Min(distance, current))
+					{
+						distance = Mathf.Min(distance, current);
+						v = pair.Value.transform.position;
+					}
 				}
 			}
 

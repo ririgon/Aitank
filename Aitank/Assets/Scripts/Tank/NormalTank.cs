@@ -25,11 +25,23 @@ public class NormalTank : ITank
 		prefabFire = (GameObject)Resources.Load("Prefabs/Fire");
 		prefabDestroy = (GameObject)Resources.Load("Prefabs/Destroy");
 
-		capturedObject = new Dictionary<string, Vector3>();
+		capturedObject = new Dictionary<string, ITank>();
 
 		// リロードタイムの初期化
 		reloadingTime = 0f;
 		isReloaded = true;
+
+		// 最大射程を算出する
+		var velocity = (firePower * 10000 / Bullet.Mass) * Time.fixedDeltaTime;
+		var maxAngleRad = maxAngle * Mathf.Deg2Rad;
+		var rf = Util.GetAirResistance(Mathf.PI * Mathf.Pow(12f, 2) / 4, Bullet.Mass).magnitude;
+		var g = Physics.gravity.magnitude;
+
+		Debug.Log(g);
+		Debug.Log(rf);
+		Debug.Log(velocity);
+		maxRange = velocity * Mathf.Cos(maxAngleRad) * (2 * (velocity * Mathf.Sin(maxAngleRad)) / (g + rf));
+
 
 		// コルーチンフラグ
 		liftCo = null;
@@ -125,8 +137,8 @@ public class NormalTank : ITank
 				{
 					newDir = Vector3.RotateTowards(this.transform.forward, vector / vector.magnitude, Time.deltaTime * 1, 0f);//heading / heading.magnitude, Time.deltaTime * 1, 0f);
 					this.transform.rotation = Quaternion.LookRotation(newDir);
-				}
-				else*/
+				}*/
+				//else
 				{
 					// 回転済んだら前進しましょう
 					rigidbody.AddForce(direction * moveSpeed * confficent);
@@ -391,12 +403,12 @@ public class NormalTank : ITank
 
 			if (!capturedObject.ContainsKey(root.name))
 			{
-				capturedObject.Add(root.name, root.transform.FindChild("Turret").position);
+				capturedObject.Add(root.name, root.GetComponent<ITank>());
 				//Debug.Log("First find. :" + root.transform.FindChild("Turret").position);
 			}
 			else
 			{
-				capturedObject[root.name] = root.transform.FindChild("Turret").position;
+				capturedObject[root.name] = root.GetComponent<ITank>();
 				//Debug.Log("Update find. :" + root.transform.FindChild("Turret").position);
 			}
 		}
@@ -429,7 +441,11 @@ public class NormalTank : ITank
 	#endregion
 
 	#region Variables
+	public float maxRange;
+	public float minRange;
+
 	private float confficent = 1000f;
+	private float maxAngle = 30;
 
 	protected GameObject prefabBullet;
 	protected GameObject prefabFire;

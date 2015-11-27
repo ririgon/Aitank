@@ -81,6 +81,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497364}
   - 64: {fileID: 6433534}
+  - 135: {fileID: 13511486}
   m_Layer: 0
   m_Name: Area
   m_TagString: Untagged
@@ -129,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 187178}
   m_LocalRotation: {x: 0, y: -.00906501617, z: 0, w: .999958932}
   m_LocalPosition: {x: 342, y: 7.62939453e-06, z: 331}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 452454}
   - {fileID: 485558}
@@ -358,7 +359,7 @@ MeshCollider:
   m_GameObject: {fileID: 175678}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 9cb114d4cb80e5146a18b34104a8154e, type: 3}
@@ -428,6 +429,9 @@ MonoBehaviour:
   _raderAngle: 0
   _moveSpeed: 2000
   _reloadTime: 5
+  _lockedObject: {x: 0, y: 0, z: 0}
+  maxRange: 0
+  minRange: 0
 --- !u!114 &11482348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,10 +440,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 187178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ea986aea3daff40a95eafd68eea5a3, type: 3}
+  m_Script: {fileID: 11500000, guid: bc447761f536e424cbae70dbc9998cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 11457662}
+--- !u!135 &13511486
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 250
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -450,6 +466,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: reloadTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
