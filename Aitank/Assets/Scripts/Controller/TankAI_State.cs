@@ -9,7 +9,7 @@ public class TankAI_State : ControllerBase
 	public FirePanel firePanel { set; get; }
 
 	// Use this for initialization
-	void Start()
+	public virtual void Start()
 	{
 		// 本来画面でカスタマイズする部分
 		searchPanel = new SearchNearPanel(tank);
@@ -19,7 +19,7 @@ public class TankAI_State : ControllerBase
 	}
 
 	// Update is called once per frame
-	void Update()
+	public virtual void Update()
 	{
 		if (!oneshotFlag)
 		{

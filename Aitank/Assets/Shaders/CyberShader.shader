@@ -9,7 +9,7 @@
 			[NoScaleOffset]_EmissionMap("Emission", 2D) = "white" { }
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque"}
 		LOD 200
 		
 		CGPROGRAM
@@ -24,6 +24,7 @@
 
 		struct Input {
 			float2 uv_MainTex;
+			float3 worldPos;
 		};
 
 		half _Glossiness;
@@ -36,12 +37,14 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			fixed4 e = tex2D(_EmissionMap, IN.uv_MainTex);
+			float distFromCam = length(IN.worldPos - _WorldSpaceCameraPos);
+
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
-			o.Emission = _EmissionColor * e + _SubEmissionColor * (!e * 0.01f);
+			o.Emission = _EmissionColor * e * (distFromCam / 120 + 1.0f) + _SubEmissionColor * (!e * 0.01f);
 		}
 		ENDCG
 	} 

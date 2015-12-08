@@ -76,7 +76,7 @@ public class CameraController : MonoBehaviour
 			// 衝突したコライダーがレーダーの索敵範囲だったら無視
 			// 衝突先がない場合距離は0になる
 			if (hit.distance == 0 || hit.distance > 8f || (hit.collider != null && hit.collider.name.Equals("Area")))
-				position += (vecZ * x + vecX * z) * 0.6f;
+				position += (vecZ * x + vecX * z);
 		}
 
 		if (position.y < 0.5f)

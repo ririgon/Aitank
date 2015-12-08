@@ -29,6 +29,7 @@ GameObject:
   - 54: {fileID: 5419106}
   - 114: {fileID: 11466746}
   - 114: {fileID: 11490778}
+  - 114: {fileID: 11422272}
   m_Layer: 0
   m_Name: CPU_CYBER
   m_TagString: Tank
@@ -204,8 +205,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133778}
-  m_LocalRotation: {x: 0, y: -.00906501617, z: 0, w: .999958932}
-  m_LocalPosition: {x: 396.799988, y: 0, z: 331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.71759033, y: .5, z: -26.8183441}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 486286}
@@ -411,6 +412,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 9cb114d4cb80e5146a18b34104a8154e, type: 3}
+--- !u!114 &11422272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fd2d657c3dee74ba9cc0a2987b7f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11466746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,6 +435,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dccd16510a42546afec8fe70bcfcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleTransform: {fileID: 0}
+  barrelTransform: {fileID: 0}
+  turretTransform: {fileID: 0}
+  raderTransform: {fileID: 0}
   _hp: 30
   _firePower: 35
   _barrelAngle: 0
@@ -438,9 +455,9 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ea986aea3daff40a95eafd68eea5a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 280d6a7fd9ca4594aa804ae4214a275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 11466746}

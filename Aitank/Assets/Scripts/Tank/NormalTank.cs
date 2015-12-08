@@ -394,24 +394,20 @@ public class NormalTank : ITank
 
 	void OnTriggerStay(Collider collider)
 	{
-		GameObject root = Util.SearchRootObject(collider);
+			GameObject root = Util.SearchRootObject(collider);
 
-		// 捕捉した戦車を記録
-		if (root.tag.Equals("Tank") && !collider.name.Equals("Area"))
-		{
-			//Debug.Log("[" + this.gameObject.name + ":Rader] Tank Found: " + root.name);
-
-			if (!capturedObject.ContainsKey(root.name))
+			// 捕捉した戦車を記録
+			if (root.tag.Equals("Tank") && !collider.name.Equals("Area"))
 			{
-				capturedObject.Add(root.name, root.GetComponent<ITank>());
-				//Debug.Log("First find. :" + root.transform.FindChild("Turret").position);
+				if (!capturedObject.ContainsKey(root.name))
+				{
+					capturedObject.Add(root.name, root.GetComponent<ITank>());
+				}
+				else
+				{
+					capturedObject[root.name] = root.GetComponent<ITank>();
+				}
 			}
-			else
-			{
-				capturedObject[root.name] = root.GetComponent<ITank>();
-				//Debug.Log("Update find. :" + root.transform.FindChild("Turret").position);
-			}
-		}
 	}
 
 	void OnTriggerExit(Collider collider)
@@ -458,5 +454,6 @@ public class NormalTank : ITank
 
 	private float reloadingTime;
 	public bool isReloaded { set; get; }
+
 	#endregion
 }

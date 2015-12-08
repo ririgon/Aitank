@@ -34,7 +34,8 @@ public class TankEditor : Editor
 
 			for (int i = 0; i < keyname.Length; i++)
 			{
-				EditorGUILayout.Vector3Field(keyname[i], tank.capturedObject[keyname[i]].transform.position);
+				if (keyname[i] != null && tank != null)
+					EditorGUILayout.Vector3Field(keyname[i], tank.capturedObject[keyname[i]].transform.position);
 			}
 		}
 	}

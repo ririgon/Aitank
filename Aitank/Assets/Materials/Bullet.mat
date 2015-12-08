@@ -126,12 +126,12 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0
+        second: 1
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 1.89999998, g: 1.34626186, b: .684558809, a: 1}
+        second: {r: 8, g: 5.66847086, b: 2.88235283, a: 1}
       data:
         first:
           name: _Color

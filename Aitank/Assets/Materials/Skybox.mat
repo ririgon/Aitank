@@ -87,44 +87,58 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _EmissionTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _FrontTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BackTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _LeftTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _RightTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _UpTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DownTex
         second:
-          m_Texture: {fileID: 2800000, guid: e2c989428fb52c74ea95358692ff5b38, type: 3}
+          m_Texture: {fileID: 2800000, guid: c9cc0901381855544aede0e44f0120bb, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cubemap
+        second:
+          m_Texture: {fileID: 8900000, guid: b995d4bd9d11078d11005b9844295342, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -178,8 +192,16 @@ Material:
         second: 0
       data:
         first:
+          name: _Intensity
+        second: 1
+      data:
+        first:
+          name: _BendScale
+        second: .200000003
+      data:
+        first:
           name: _Exposure
-        second: 1.39999998
+        second: 0
       data:
         first:
           name: _SunDisk
@@ -196,6 +218,10 @@ Material:
         first:
           name: _Rotation
         second: 0
+      data:
+        first:
+          name: _YawAngle
+        second: 0
     m_Colors:
       data:
         first:
@@ -204,7 +230,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 2.36029434, g: .65380156, b: 2.36029434, a: 1}
       data:
         first:
           name: _GroundColor
@@ -216,4 +242,12 @@ Material:
       data:
         first:
           name: _Tint
-        second: {r: .5, g: .5, b: .5, a: .5}
+        second: {r: .0860000029, g: 0, b: .158999994, a: .272000015}
+      data:
+        first:
+          name: _Color2
+        second: {r: 3, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Color3
+        second: {r: 0, g: 0, b: 0, a: 1}
